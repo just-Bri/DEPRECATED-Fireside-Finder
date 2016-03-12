@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require_relative '../lib/fireside_finder/geocoder'
+require_relative '../lib/fireside_finder/scraper'
+require_relative '../lib/fireside_finder/gathering'
+require './lib/fireside_finder'
+FiresideFinder::CLI.new.call

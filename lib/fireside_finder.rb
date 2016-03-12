@@ -1,5 +1,2 @@
-require "fireside_finder/version"
-
-module FiresideFinder
-  # Your code goes here...
-end
+require_relative "./fireside_finder/version"
+require_relative "./fireside_finder/cli"
