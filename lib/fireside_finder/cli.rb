@@ -8,12 +8,12 @@ require 'geocoder'
 require 'httparty'
 
 class FiresideFinder::CLI
-  attr_accessor :user_input
+  attr_accessor :user_input, :geoaddress
 
   def self.call
     puts "Please enter an address or zip-code to find nearby Fireside Gatherings:"
     @user_input = gets.strip
-    FiresideFinder::Scraper::scrape_list
+    FiresideFinder::Scraper::scrape_list(@user_input)
   end
 
   # def list_local

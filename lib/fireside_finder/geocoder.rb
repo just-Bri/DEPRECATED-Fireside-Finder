@@ -7,7 +7,7 @@ require 'httparty'
 class FiresideFinder::Geocode
   attr_accessor :geoaddress, :user_input
 
-  def self.geosearch
-    Geocoder.coordinates(@user_input)
+  def self.geosearch(user_input)
+    Geocoder.coordinates(user_input)
   end
 end
