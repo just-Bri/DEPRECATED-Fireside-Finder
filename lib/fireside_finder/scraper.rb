@@ -43,4 +43,3 @@ class FiresideFinder::Scraper
 end
 
 #binding.pry
-# format for complete url: http://us.battle.net/hearthstone/en/fireside-gatherings?lat=29.2784215&lng=-94.83650940000001
