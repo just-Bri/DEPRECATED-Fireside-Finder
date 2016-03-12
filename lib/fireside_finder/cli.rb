@@ -1,17 +1,19 @@
 # our CLI Controller
 require_relative '../fireside_finder'
 require_relative 'geocoder'
+require_relative 'scraper'
 require 'nokogiri'
 require 'pry'
 require 'geocoder'
 require 'httparty'
 
 class FiresideFinder::CLI
+  attr_accessor :user_input
 
   def self.call
     puts "Please enter an address or zip-code to find nearby Fireside Gatherings:"
-    user_input = gets.strip
-    FiresideFinder::Geocode::geosearch(user_input)
+    @user_input = gets.strip
+    FiresideFinder::Scraper::scrape_list
   end
 
   # def list_local

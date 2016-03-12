@@ -1,14 +1,15 @@
 require_relative '../fireside_finder'
+require_relative 'gathering'
 require 'nokogiri'
 require 'pry'
 require 'geocoder'
 require 'httparty'
 
 class FiresideFinder::Scraper
-  attr_accessor :page, :parsed
+  attr_accessor :page, :parsed, :geoaddress
 
   def self.scrape_list
-    @page = HTTParty.get('http://us.battle.net/hearthstone/en/fireside-gatherings?lat=40.7127837&lng=-74.00594130000002')
+    @page = HTTParty.get('http://us.battle.net/hearthstone/en/fireside-gatherings?lat='+"#{FiresideFinder::Geocode::geosearch[0]}"+'&lng='+"#{FiresideFinder::Geocode::geosearch[1]}")
     @parsed = Nokogiri::HTML(@page)
 
     FiresideFinder::Gathering::reset
