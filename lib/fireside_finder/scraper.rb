@@ -1,19 +1,17 @@
-# required libraries/modules/gems
-require 'rubygems'
+require_relative '../fireside_finder'
 require 'nokogiri'
 require 'pry'
 require 'geocoder'
 require 'httparty'
 
-
 class FiresideFinder::Scraper
-  attr_accessor :name, :venue, :city, :date, :time, :description, :address, :page, :parsed, :info
+  attr_accessor :page, :parsed
 
   def self.scrape_list
     @page = HTTParty.get('http://us.battle.net/hearthstone/en/fireside-gatherings?lat=40.7127837&lng=-74.00594130000002')
     @parsed = Nokogiri::HTML(@page)
 
-    Gathering::reset
+    FiresideFinder::Gathering::reset
 
      @parsed.css('.meetups-event-table__row:not(:first-child)').each do |event_detail|
        new_gathering = FiresideFinder::Gathering.new
@@ -42,5 +40,5 @@ class FiresideFinder::Scraper
   end
 end
 
-binding.pry
+#binding.pry
 # format for complete url: http://us.battle.net/hearthstone/en/fireside-gatherings?lat=29.2784215&lng=-94.83650940000001
