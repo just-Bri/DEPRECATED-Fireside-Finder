@@ -25,12 +25,12 @@ class FiresideFinder::CLI
       case @user_input
       when "new"
         FiresideFinder::CLI.call
-      # when @user_input.is_a?(Integer)
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # when "2"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
+      when "1"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
+      when "2"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       # when "3"
       #   @specific_event = @current_gatherings[@user_input.to_i - 1]
       #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
@@ -65,11 +65,7 @@ class FiresideFinder::CLI
         puts "See you at the Tavern!"
         exit
       else
-        @user_input = @user_input.to_i
-        @specific_event = @current_gatherings[@user_input - 1]
-        FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # else
-      #   puts "Not sure what you want, type 'new' to lookup a location"
+        puts "Not sure what you want, type 'new' to lookup a location"
       end
     end
   end
@@ -77,9 +73,9 @@ class FiresideFinder::CLI
   def self.print_all(user_input)
     FiresideFinder::Scraper::scrape_list(user_input)
     counter = 0
-    @current_gatherings = Array.new
     FiresideFinder::Gathering.all.each do |gather|
       counter += 1
+      @current_gatherings = Array.new
       @current_gatherings << gather
       puts counter
       gather.inspect.split('@').each do |detail|

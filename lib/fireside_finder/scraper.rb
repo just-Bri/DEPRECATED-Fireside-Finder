@@ -13,25 +13,23 @@ class FiresideFinder::Scraper
     @page = HTTParty.get("http://us.battle.net/hearthstone/en/fireside-gatherings?lat=#{coords[0]}&lng=#{coords[1]}")
     @parsed = Nokogiri::HTML(@page)
 
-    FiresideFinder::Gathering::reset
-
      @parsed.css('.meetups-event-table__row:not(:first-child)').each do |event_detail|
        new_gathering = FiresideFinder::Gathering.new
        new_gathering.name = event_detail.css('.meetups-event-table__cell__name').children.text
        new_gathering.city = event_detail.css('.meetups-event-table__cell__city').text
        new_gathering.date = event_detail.css('.meetups-event-table__cell--time').text.strip
-       event_link = @parsed.css('.meetups-event-table__row').css('a').map {|link| link['href']}[0]
+       event_link = event_detail.attribute('href')
        new_gathering.details_link = "http://us.battle.net#{event_link}"
        new_gathering.save
      end
   end
 
   def self.scrape_specific(specific_event)
-    FiresideFinder::Gathering::reset
     @page = HTTParty.get("#{specific_event.details_link}")
     @parsed = Nokogiri::HTML(@page)
 
-    FiresideFinder::Gathering::reset
+    FiresideFinder::Gathering.reset
+
     new_gathering = FiresideFinder::Gathering.new
     new_gathering.name = @parsed.css('.meetup-header__title').text.strip
     new_gathering.venue = @parsed.css('.location-address').css('h4').text
