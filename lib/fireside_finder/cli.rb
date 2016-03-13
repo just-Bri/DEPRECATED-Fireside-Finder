@@ -6,9 +6,8 @@ require 'pry'
 
 class FiresideFinder::CLI
   attr_accessor :user_input, :geoaddress, :specific_event, :current_gatherings
-  # binding.pry
-  def self.call
 
+  def self.call
     puts "Use 'new' to get back to this menu, 'exit' will close the program."
     puts "Please enter your address or zip-code to find local Fireside Gatherings:"
     user_input = gets.strip
@@ -70,9 +69,9 @@ class FiresideFinder::CLI
   def self.print_all(user_input)
     FiresideFinder::Scraper::scrape_list(user_input)
     counter = 0
+    @current_gatherings = Array.new
     FiresideFinder::Gathering.all.each do |gather|
       counter += 1
-      @current_gatherings = Array.new
       @current_gatherings << gather
       puts counter
       gather.inspect.split('@').each do |detail|
@@ -93,3 +92,4 @@ class FiresideFinder::CLI
     FiresideFinder::CLI.menu
   end
 end
+binding.pry
