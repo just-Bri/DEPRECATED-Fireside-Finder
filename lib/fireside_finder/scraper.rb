@@ -6,7 +6,7 @@ require 'geocoder'
 require 'httparty'
 
 class FiresideFinder::Scraper
-  attr_accessor :page, :parsed, :geoaddress, :user_input
+  attr_accessor :page, :parsed, :geoaddress, :user_input, :specific_event
 
   def self.scrape_list(user_input)
     coords = FiresideFinder::Geocode.geosearch(user_input)
@@ -26,8 +26,9 @@ class FiresideFinder::Scraper
      end
   end
 
-  def self.scrape_specific
-    @page = HTTParty.get('http://us.battle.net/hearthstone/en/fireside-gatherings?lat=29.2784215&lng=-94.83650940000001')
+  def self.scrape_specific(specific_event)
+    @page = HTTParty.get("#{specific_event.details_link}")
+
     @parsed = Nokogiri::HTML(@page)
 
     FiresideFinder::Gathering::reset
@@ -36,10 +37,12 @@ class FiresideFinder::Scraper
     new_gathering.venue = @parsed.css('.location-address').css('h4').text
     new_gathering.address = @parsed.css('.location-address').css('p').text
     new_gathering.datetime = @parsed.css('.details-start-date').text.strip
-    new_gathering.description = @parsed.css('.description:first-of-type').css('p:first-of-type').text.gsub! "\r" "\n", ""
+    description = @parsed.css('.description:first-of-type').css('p:first-of-type').text.gsub! "\r" "\n", ""
+    if description != nil
+      new_gathering.description = @parsed.css('.description:first-of-type').css('p:first-of-type').text.gsub! "\r" "\n", ""
+    end
     new_gathering.directions = @parsed.css('.map-container span').css('a').map { |link| link['href'] }[0]
     new_gathering.save
-
   end
 end
 
