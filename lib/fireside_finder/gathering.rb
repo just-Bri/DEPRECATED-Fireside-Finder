@@ -1,8 +1,4 @@
 require_relative '../fireside_finder'
-require 'nokogiri'
-require 'pry'
-require 'geocoder'
-require 'httparty'
 
 class FiresideFinder::Gathering
   attr_accessor :name, :venue, :city, :date, :datetime, :description, :address, :directions, :details_link

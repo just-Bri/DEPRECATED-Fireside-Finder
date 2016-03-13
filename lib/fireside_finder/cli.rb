@@ -2,10 +2,7 @@
 require_relative '../fireside_finder'
 require_relative 'geocoder'
 require_relative 'scraper'
-require 'nokogiri'
 require 'pry'
-require 'geocoder'
-require 'httparty'
 
 class FiresideFinder::CLI
   attr_accessor :user_input, :geoaddress, :specific_event, :current_gatherings
@@ -32,32 +29,43 @@ class FiresideFinder::CLI
         @specific_event = @current_gatherings[@user_input.to_i - 1]
         FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "2"
-        puts "more info on 2"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "3"
-        puts "more info on 3"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "4"
-        puts "more info on 4"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "5"
-        puts "more info on 5"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "6"
-        puts "more info on 6"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "7"
-        puts "more info on 7"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "8"
-        puts "more info on 8"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "9"
-        puts "more info on 9"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "10"
-        puts "more info on 10"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "11"
-        puts "more info on 11"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "12"
-        puts "more info on 12"
+        @specific_event = @current_gatherings[@user_input.to_i - 1]
+        FiresideFinder::CLI.print_specific(@specific_event.details_link)
       when "exit"
         puts "See you at the Tavern!"
         exit
-      when ""
-        FiresideFinder::CLI.call
+      else
+        puts "Not sure what you want, type 'new' to lookup a location"
       end
     end
   end
