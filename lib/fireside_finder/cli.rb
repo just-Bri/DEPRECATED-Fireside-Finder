@@ -15,10 +15,6 @@ class FiresideFinder::CLI
     FiresideFinder::CLI.menu
   end
 
-  def list_local
-    @local_gatherings = Scraper::scrape_list
-  end
-
   def self.menu
     while @user_input != "exit"
       @user_input = gets.strip
@@ -26,11 +22,11 @@ class FiresideFinder::CLI
       when "new"
         FiresideFinder::CLI.call
       when "1"
-        @specific_event = @current_gatherings[@user_input.to_i - 1]
-        FiresideFinder::CLI.print_specific(@specific_event.details_link)
+        # @specific_event = @current_gatherings[@user_input.to_i - 1]
+        # FiresideFinder::CLI.print_specific(@specific_event)
+        FiresideFinder::CLI.print_specific(@current_gatherings[@user_input.to_i - 1])
       when "2"
-        @specific_event = @current_gatherings[@user_input.to_i - 1]
-        FiresideFinder::CLI.print_specific(@specific_event.details_link)
+        FiresideFinder::CLI.print_specific(@current_gatherings[@user_input.to_i - 1])
       # when "3"
       #   @specific_event = @current_gatherings[@user_input.to_i - 1]
       #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
@@ -87,13 +83,12 @@ class FiresideFinder::CLI
   end
 
   def self.print_specific(specific_event)
-    FiresideFinder::Scraper::scrape_specific(@specific_event)
+    FiresideFinder::Scraper::scrape_specific(specific_event)
     FiresideFinder::Gathering.all.each do |gather|
       gather.inspect.split('@').each do |detail|
         puts detail
       end
     end
-    puts "Enter the number above the event you'd like more info about."
     FiresideFinder::CLI.menu
   end
 end
