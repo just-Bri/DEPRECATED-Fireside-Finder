@@ -27,8 +27,8 @@ class FiresideFinder::Scraper
   end
 
   def self.scrape_specific(specific_event)
+    FiresideFinder::Gathering::reset
     @page = HTTParty.get("#{specific_event.details_link}")
-
     @parsed = Nokogiri::HTML(@page)
 
     FiresideFinder::Gathering::reset
