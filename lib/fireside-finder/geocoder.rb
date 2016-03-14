@@ -1,4 +1,4 @@
-require_relative '../fireside_finder'
+require_relative '../fireside-finder'
 require 'nokogiri'
 require 'pry'
 require 'geocoder'

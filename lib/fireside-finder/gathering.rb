@@ -1,4 +1,4 @@
-require_relative '../fireside_finder'
+require_relative '../fireside-finder'
 
 class FiresideFinder::Gathering
   attr_accessor :name, :venue, :city, :date, :datetime, :description, :address, :directions, :details_link

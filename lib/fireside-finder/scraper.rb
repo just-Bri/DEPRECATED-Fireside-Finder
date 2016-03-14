@@ -1,4 +1,4 @@
-require_relative '../fireside_finder'
+require_relative '../fireside-finder'
 require_relative 'gathering'
 require 'nokogiri'
 require 'pry'

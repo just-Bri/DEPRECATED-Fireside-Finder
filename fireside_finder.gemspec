@@ -1,14 +1,14 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fireside_finder/version'
+require 'fireside-finder/version'
 gem 'nokogiri'
 gem 'pry'
 gem 'geocoder'
 gem 'httparty'
 
 Gem::Specification.new do |spec|
-  spec.name          = "fireside_finder"
+  spec.name          = "fireside-finder"
   spec.version       = FiresideFinder::VERSION
   spec.author        = ["reifnotreef"]
   spec.authors       = ["reifnotreef"]
@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Find local Fireside Gatherings."
   spec.description   = ""
-  spec.homepage      = "https://github.com/reifnotreef/fireside_finder"
+  spec.homepage      = "https://github.com/reifnotreef/fireside-finder"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "bin"
