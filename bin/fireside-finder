@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "fireside_finder"
+require_relative "../lib/fireside_finder"
 
 require_relative '../lib/fireside_finder/cli'
 require_relative '../lib/fireside_finder/geocoder'
