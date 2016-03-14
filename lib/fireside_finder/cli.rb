@@ -16,52 +16,19 @@ class FiresideFinder::CLI
   end
 
   def self.menu
+    @user_input = nil
     while @user_input != "exit"
       @user_input = gets.strip
-      case @user_input
-      when "new"
+      if @user_input.to_i > 0
+        FiresideFinder::CLI.print_specific(@current_gatherings[@user_input.to_i - 1])
+      elsif @user_input == "new"
+        FiresideFinder::Gathering.reset
         FiresideFinder::CLI.call
-      when "1"
-        # @specific_event = @current_gatherings[@user_input.to_i - 1]
-        # FiresideFinder::CLI.print_specific(@specific_event)
-        FiresideFinder::CLI.print_specific(@current_gatherings[@user_input.to_i - 1])
-      when "2"
-        FiresideFinder::CLI.print_specific(@current_gatherings[@user_input.to_i - 1])
-      # when "3"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # when "4"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # when "5"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # when "6"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # when "7"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # when "8"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # when "9"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # when "10"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # when "11"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      # when "12"
-      #   @specific_event = @current_gatherings[@user_input.to_i - 1]
-      #   FiresideFinder::CLI.print_specific(@specific_event.details_link)
-      when "exit"
-        puts "See you at the Tavern!"
+      elsif @user_input == "exit"
+        puts "See you at the Tavern, hero!"
         exit
       else
-        puts "Not sure what you want, type 'new' to lookup a location"
+        puts "Not sure what to do..."
       end
     end
   end
@@ -89,7 +56,7 @@ class FiresideFinder::CLI
         puts detail
       end
     end
+    puts "Enter 'new' to search a new area, or 'exit' to close the program."
     FiresideFinder::CLI.menu
   end
 end
-binding.pry
