@@ -72,7 +72,7 @@ class FiresideFinder::CLI
       if gather.description != nil
         puts "Event Description: #{gather.description}"
       end
-      puts "Directions:         #{gather.directions}"
+      puts "Directions:        #{gather.directions}"
       puts "--------------------------------------------------------------------------------"
     end
     puts "--------------------------------------------------------------------------------"
