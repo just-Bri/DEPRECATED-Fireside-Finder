@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Find local Fireside Gatherings."
   spec.description   = ""
-  spec.homepage      = "Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/reifnotreef/fireside_finder"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
