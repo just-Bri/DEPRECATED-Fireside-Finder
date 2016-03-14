@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.license       = "Apache-2.0"
 
   spec.summary       = "Find local Fireside Gatherings."
-  spec.description   = ""
+  spec.description   = "Put in your address of zip-code to find local Fireside Gatherings!"
   spec.homepage      = "https://github.com/reifnotreef/fireside-finder"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
