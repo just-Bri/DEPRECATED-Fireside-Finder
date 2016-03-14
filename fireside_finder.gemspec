@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/reifnotreef/fireside_finder"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
+  spec.bindir        = "bin"
   spec.executables   = ["fireside_finder"]
   spec.require_paths = ["lib"]
 
