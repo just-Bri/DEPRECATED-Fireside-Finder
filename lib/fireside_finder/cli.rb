@@ -11,8 +11,11 @@ class FiresideFinder::CLI
     puts "Use 'new' to get back to this menu, 'exit' will close the program."
     puts "Please enter your address or zip-code to find local Fireside Gatherings:"
     user_input = gets.strip
-    FiresideFinder::CLI.print_all(user_input)
-    FiresideFinder::CLI.menu
+    while user_input != "exit"
+      FiresideFinder::CLI.print_all(user_input)
+      FiresideFinder::CLI.menu
+    end
+    puts "See you at the Tavern, hero!"
   end
 
   def self.menu
