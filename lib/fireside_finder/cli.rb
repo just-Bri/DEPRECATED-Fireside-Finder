@@ -8,6 +8,9 @@ class FiresideFinder::CLI
   attr_accessor :user_input, :geoaddress, :specific_event, :current_gatherings
 
   def self.call
+    puts "--------------------------------------------------------------------------------"
+    puts "Welcome to Hearthstone Fireside Gathering Finder Gem!"
+    puts "--------------------------------------------------------------------------------"
     puts "Use 'new' to get back to this menu, 'exit' will close the program."
     puts "Please enter your address or zip-code to find local Fireside Gatherings:"
     user_input = gets.strip
@@ -43,12 +46,18 @@ class FiresideFinder::CLI
     FiresideFinder::Gathering.all.each do |gather|
       counter += 1
       @current_gatherings << gather
-      puts "--------------------------------"
+      puts "--------------------------------------------------------------------------------"
       puts counter
-      gather.inspect.split('@').each do |detail|
-        puts detail
-      end
+      puts "Gathering Name:    #{gather.name}"
+      puts "City:              #{gather.city}"
+      puts "Date:              #{gather.date}"
+      puts "Link to More Info: #{gather.details_link}"
+      puts "--------------------------------------------------------------------------------"
+      # gather.inspect.split('@').each do |detail|
+      #   puts detail
+      # end
     end
+    puts ""
     puts "Enter the number above the event you'd like more info about."
     FiresideFinder::CLI.menu
   end
@@ -57,11 +66,17 @@ class FiresideFinder::CLI
     FiresideFinder::Scraper::scrape_specific(specific_event)
     puts "--------------------------------"
     FiresideFinder::Gathering.all.each do |gather|
-      gather.inspect.split('@').each do |detail|
-        puts detail
+      puts "--------------------------------------------------------------------------------"
+      puts "Gathering Name:    #{gather.name}"
+      puts "Venue:             #{gather.venue}"
+      puts "Address:           #{gather.address}"
+      puts "Date:              #{gather.datetime}"
+      if gather.details_link != nil
+        puts "Event Description: #{gather.details_link}"
       end
+      puts "--------------------------------------------------------------------------------"
     end
-    puts "--------------------------------"
+    puts "--------------------------------------------------------------------------------"
     puts "Enter 'new' to search a new area, or 'exit' to close the program."
     FiresideFinder::CLI.menu
   end
