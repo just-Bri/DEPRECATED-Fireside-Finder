@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fireside_finder (0.0.1)
+    fireside_finder (0.0.3)
 
 GEM
   remote: https://rubygems.org/

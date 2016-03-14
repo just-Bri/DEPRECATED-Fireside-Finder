@@ -71,9 +71,10 @@ class FiresideFinder::CLI
       puts "Venue:             #{gather.venue}"
       puts "Address:           #{gather.address}"
       puts "Date:              #{gather.datetime}"
-      if gather.details_link != nil
-        puts "Event Description: #{gather.details_link}"
+      if gather.description != nil
+        puts "Event Description: #{gather.description}"
       end
+      puts "Directions:         #{gather.directions}"
       puts "--------------------------------------------------------------------------------"
     end
     puts "--------------------------------------------------------------------------------"
