@@ -43,6 +43,7 @@ class FiresideFinder::CLI
     FiresideFinder::Gathering.all.each do |gather|
       counter += 1
       @current_gatherings << gather
+      puts "--------------------------------"
       puts counter
       gather.inspect.split('@').each do |detail|
         puts detail
@@ -54,11 +55,13 @@ class FiresideFinder::CLI
 
   def self.print_specific(specific_event)
     FiresideFinder::Scraper::scrape_specific(specific_event)
+    puts "--------------------------------"
     FiresideFinder::Gathering.all.each do |gather|
       gather.inspect.split('@').each do |detail|
         puts detail
       end
     end
+    puts "--------------------------------"
     puts "Enter 'new' to search a new area, or 'exit' to close the program."
     FiresideFinder::CLI.menu
   end
