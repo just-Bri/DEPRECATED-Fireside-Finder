@@ -35,6 +35,7 @@ class FiresideFinder::CLI
         exit
       else
         puts "Not sure what to do..."
+        FiresideFinder::CLI.menu
       end
     end
   end
