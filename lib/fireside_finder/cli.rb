@@ -53,9 +53,6 @@ class FiresideFinder::CLI
       puts "Date:              #{gather.date}"
       puts "Link to More Info: #{gather.details_link}"
       puts "--------------------------------------------------------------------------------"
-      # gather.inspect.split('@').each do |detail|
-      #   puts detail
-      # end
     end
     puts ""
     puts "Enter the number above the event you'd like more info about."
@@ -64,7 +61,7 @@ class FiresideFinder::CLI
 
   def self.print_specific(specific_event)
     FiresideFinder::Scraper::scrape_specific(specific_event)
-    puts "--------------------------------"
+    puts "--------------------------------------------------------------------------------"
     FiresideFinder::Gathering.all.each do |gather|
       puts "--------------------------------------------------------------------------------"
       puts "Gathering Name:    #{gather.name}"
