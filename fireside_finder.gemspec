@@ -10,6 +10,7 @@ gem 'httparty'
 Gem::Specification.new do |spec|
   spec.name          = "fireside_finder"
   spec.version       = FiresideFinder::VERSION
+  spec.author        = ["reifnotreef"]
   spec.authors       = ["reifnotreef"]
   spec.email         = ["bridgerrhammond@gmail.com"]
   spec.license       = "Apache-2.0"
