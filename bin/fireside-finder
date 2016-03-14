@@ -7,5 +7,5 @@ require_relative '../lib/fireside-finder/cli'
 require_relative '../lib/fireside-finder/geocoder'
 require_relative '../lib/fireside-finder/scraper'
 require_relative '../lib/fireside-finder/gathering'
-require './lib/fireside-finder'
+require_relative './lib/fireside-finder'
 FiresideFinder::CLI.call
