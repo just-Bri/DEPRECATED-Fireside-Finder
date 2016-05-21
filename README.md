@@ -1,6 +1,6 @@
 # FiresideFinder
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fireside-finder`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a simple ruby gem to find local Fireside Gatherings for Hearthstone. Information is scraped from http://us.battle.net/hearthstone/en/fireside-gatherings
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Once installed simply run fireside-finder in your cli and follow the prompts.
 
 ## Development
 
