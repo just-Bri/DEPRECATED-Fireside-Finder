@@ -3,6 +3,7 @@
 This is a simple ruby gem to find local Fireside Gatherings for Hearthstone. Information is scraped from http://us.battle.net/hearthstone/en/fireside-gatherings
 
 ## Installation
+This gem requires geocoder and httparty.
 
     $ gem install fireside-finder geocoder httparty
 
