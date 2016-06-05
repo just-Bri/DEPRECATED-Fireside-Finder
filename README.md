@@ -9,7 +9,8 @@ This is a simple ruby gem to find local Fireside Gatherings for Hearthstone. Inf
 ## Usage
 
 Once installed simply run fireside-finder in your cli and follow the prompts.
-$ fireside-finder
+
+    $ fireside-finder
 
 ## Development
 
