@@ -21,7 +21,7 @@ This gem require the following external gems:
 [pry](https://rubygems.org/gems/pry),
 [nokogiri](https://rubygems.org/gems/nokogiri),
 [geocoder](https://rubygems.org/gems/geocoder),
-[httparty](https://rubygems.org/gems/httparty)
+[httparty](https://rubygems.org/gems/httparty).
 
 ## Development
 
