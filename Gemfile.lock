@@ -1,41 +1,39 @@
 PATH
   remote: .
   specs:
-    fireside_finder (0.0.3)
+    fireside-finder (0.0.7)
 
 GEM
   remote: https://rubygems.org/
   specs:
     coderay (1.1.1)
     diff-lcs (1.2.5)
-    geocoder (1.3.1)
-    httparty (0.13.7)
-      json (~> 1.8)
+    geocoder (1.4.0)
+    httparty (0.14.0)
       multi_xml (>= 0.5.2)
-    json (1.8.3)
     method_source (0.8.2)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.1.0)
     multi_xml (0.5.5)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
-    pry (0.10.3)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
+    pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    rake (10.4.2)
-    rspec (3.4.0)
-      rspec-core (~> 3.4.0)
-      rspec-expectations (~> 3.4.0)
-      rspec-mocks (~> 3.4.0)
-    rspec-core (3.4.3)
-      rspec-support (~> 3.4.0)
-    rspec-expectations (3.4.0)
+    rake (10.5.0)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-mocks (3.4.1)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-support (3.4.1)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
     slop (3.6.0)
 
 PLATFORMS
@@ -43,7 +41,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.11)
-  fireside_finder!
+  fireside-finder!
   geocoder
   httparty
   nokogiri
@@ -52,4 +50,4 @@ DEPENDENCIES
   rspec (~> 3.0)
 
 BUNDLED WITH
-   1.11.2
+   1.13.6

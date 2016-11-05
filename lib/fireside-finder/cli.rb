@@ -44,20 +44,34 @@ class FiresideFinder::CLI
     FiresideFinder::Scraper::scrape_list(user_input)
     counter = 0
     @current_gatherings = Array.new
-    FiresideFinder::Gathering.all.each do |gather|
-      counter += 1
-      @current_gatherings << gather
+      FiresideFinder::Gathering.all.each do |gather|
+        counter += 1
+        @current_gatherings << gather
+        puts "--------------------------------------------------------------------------------"
+        puts counter
+        puts "Gathering Name:    #{gather.name}"
+        puts "City:              #{gather.city}"
+        puts "Date:              #{gather.date}"
+        puts "Link to More Info: #{gather.details_link}"
+        puts "--------------------------------------------------------------------------------"
+      end
+    if @current_gatherings.any?
+      puts ""
+      puts "Enter the number above the event you'd like more info about."
+      FiresideFinder::CLI.menu
+    else
       puts "--------------------------------------------------------------------------------"
-      puts counter
-      puts "Gathering Name:    #{gather.name}"
-      puts "City:              #{gather.city}"
-      puts "Date:              #{gather.date}"
-      puts "Link to More Info: #{gather.details_link}"
-      puts "--------------------------------------------------------------------------------"
+      puts "There are no upcoming events in your area"
+      puts "Please try a new location"
+      puts ""
+      puts "You will be taken back to the main menu in 5 seconds"
+      sleep(5)
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      FiresideFinder::CLI.call
     end
-    puts ""
-    puts "Enter the number above the event you'd like more info about."
-    FiresideFinder::CLI.menu
   end
 
   def self.print_specific(specific_event)
