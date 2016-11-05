@@ -64,12 +64,9 @@ class FiresideFinder::CLI
       puts "There are no upcoming events in your area"
       puts "Please try a new location"
       puts ""
-      puts "You will be taken back to the main menu in 5 seconds"
-      sleep(5)
-      puts ""
-      puts ""
-      puts ""
-      puts ""
+      puts "You will be taken back to the main menu in 10 seconds"
+      sleep(10)
+      system "clear" or system "cls"
       FiresideFinder::CLI.call
     end
   end
