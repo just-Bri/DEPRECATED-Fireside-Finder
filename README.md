@@ -3,7 +3,7 @@
 This is a simple ruby gem to find local Fireside Gatherings for Hearthstone. Information is scraped from http://us.battle.net/hearthstone/en/fireside-gatherings
 
 ## Installation
-This gem uses external gems see [Dependencies](https://github.com/reifnotreef/fireside-finder#Dependencies) for which specific gems will be installed along with Fireside-Finder.
+This depends on additional gems, see [Dependencies](https://github.com/reifnotreef/fireside-finder#dependencies) for which specific gems will be installed along with Fireside-Finder.
 
     $ gem install fireside-finder
 
@@ -14,7 +14,7 @@ Once installed simply run fireside-finder in your cli and follow the prompts.
     $ fireside-finder
 
 ## Dependencies
-This gem require the following external gems:
+This gem requires the following external gems:
 [bundler](https://rubygems.org/gems/bundler),
 [rake](https://rubygems.org/gems/rake),
 [rspec](https://rubygems.org/gems/rspec),
