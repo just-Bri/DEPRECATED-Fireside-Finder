@@ -7,10 +7,10 @@ require 'fireside-finder/version'
 # gem 'pry'
 # gem 'geocoder'
 # gem 'httparty'
-require 'nokogiri'
-require 'pry'
-require 'geocoder'
-require 'httparty'
+# require 'nokogiri'
+# require 'pry'
+# require 'geocoder'
+# require 'httparty'
 
 Gem::Specification.new do |spec|
   spec.name          = "fireside-finder"
@@ -29,11 +29,11 @@ Gem::Specification.new do |spec|
   spec.executables   = ["fireside-finder"]
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.11"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "pry"
-  spec.add_development_dependency "nokogiri"
-  spec.add_development_dependency "geocoder"
-  spec.add_development_dependency "httparty"
+  spec.add_runtime_dependency "bundler"
+  spec.add_runtime_dependency "rake", ">=11.0.0"
+  spec.add_runtime_dependency "rspec"
+  spec.add_runtime_dependency "pry"
+  spec.add_runtime_dependency "nokogiri"
+  spec.add_runtime_dependency "geocoder"
+  spec.add_runtime_dependency "httparty"
 end
