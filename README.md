@@ -1,4 +1,6 @@
-# FiresideFinder
+# DEPRECARED FiresideFinder
+
+[Deprecation details](https://hearthstone.blizzard.com/en-us/news/23357895)
 
 This is a simple ruby gem to find local Fireside Gatherings for Hearthstone. Information is scraped from http://us.battle.net/hearthstone/en/fireside-gatherings
 
